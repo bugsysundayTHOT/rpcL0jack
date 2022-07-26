@@ -1,0 +1,34 @@
+config rule
+        option name 'SMB-BLOCK'
+        option src 'wlan'
+        option family 'any'
+        option proto 'tcp'
+        option dest_port '445 139'
+        option target 'REJECT'
+
+config rule
+        option name 'SMB-NetBIOS-BLOCK'
+        option src 'wlan'
+        option family 'any'
+        option proto 'udptcp'
+        option dest_port '137-138'
+        option target 'REJECT'
+
+config rule
+        option name 'RPC-BLOCK'
+        option src 'any'
+        option family 'any'
+        option proto 'udptcp'
+        option dest_port '135'
+        option target 'REJECT'
+		
+		
+tcpdump -A -i br-wlan tcp port 445
+tcpdump 'port 137 || 138 || 139 || 445 || 135'
+
+wireshark
+tcp.port == 445 || tcp.port == 139
+
+135 tcp udp			rpc
+445 tcp 			smb
+139					netbios
