@@ -10,7 +10,7 @@ config rule
         option name 'SMB-NetBIOS-BLOCK'
         option src 'wlan'
         option family 'any'
-        option proto 'udptcp'
+        option proto 'udp tcp'
         option dest_port '137-138'
         option target 'REJECT'
 
@@ -18,7 +18,7 @@ config rule
         option name 'RPC-BLOCK'
         option src 'any'
         option family 'any'
-        option proto 'udptcp'
+        option proto 'udp tcp'
         option dest_port '135'
         option target 'REJECT'
 		
