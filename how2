@@ -1,4 +1,3 @@
 to remove shares netshare.bat as scheduled task on start up with high priv
 dont forget to mod hdd or add del as neeeded
-openwrt fw3 as block rule ! just 135 needed. rest for not beeing online visible
-scheduled task
+openwrt fw3 as block rule ! just 135 needed. 
