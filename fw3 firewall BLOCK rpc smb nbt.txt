@@ -7,12 +7,11 @@ config rule
         option target 'REJECT'
 		
 		
-tcpdump -A -i br-wlan tcp port 445
+tcpdump -A -i br-wlan tcp port 135
 tcpdump 'port 137 || 138 || 139 || 445 || 135'
 
 wireshark
-tcp.port == 445 || tcp.port == 139
-
+tcp.port == 135 
 135 tcp udp			rpc
 445 tcp 			smb
 139					netbios
