@@ -2,6 +2,6 @@ config rule
         option name 'RPC-BLOCK'
         option src 'any'
         option family 'any'
-        option proto 'udp tcp'
+        option proto 'tcp'
         option dest_port '135'
         option target 'REJECT'
